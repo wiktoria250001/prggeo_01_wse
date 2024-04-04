@@ -2,4 +2,6 @@
 
 # md
 
-- [ ] mój drogi pracowniku zrób zmiane w kodzie
+asdfasdf:
+
+- [x] mój drogi pracowniku zrób zmiane w kodzie
