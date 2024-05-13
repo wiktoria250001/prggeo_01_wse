@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import plan_wat from "./Przechwytywanie.PNG";
+import plan_wat from "./plan_wat.jpg";
 
 function Home({ text }) {
   return (
