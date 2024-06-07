@@ -9,19 +9,21 @@ import "./Map.css";
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
 
-
-
-
-
 function Map() {
-useEffect{()=>{
-  console.log("aaa");
-  const getData=()=>{
-axios.get(link do naszych danych wfs, czyli adres z geoservera).then(dane=>{console.log(dane)})
-
-
-  }
-},[]};
+  useEffect(() => {
+    console.log("aa");
+    const getData = () => {
+      axios
+        .get(
+          // "http://127.0.0.1:8080/geoserver/prge/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=prge%3Agranice_wojewodztw_db&maxFeatures=50&outputFormat=application%2Fjson"
+          "https://jsonplaceholder.typicode.com/posts/1"
+        )
+        .then((dane) => {
+          console.log(dane);
+        });
+    };
+    getData();
+  }, []);
 
   return (
     <div>
@@ -38,14 +40,15 @@ axios.get(link do naszych danych wfs, czyli adres z geoservera).then(dane=>{cons
           </LayersControl.BaseLayer>
           <LayersControl.BaseLayer name="granice wojewodztw db">
             <WMSTileLayer
-              layers="grance_wojewodztw_db"
-              url
-              wpisac
-              url
-              z
-              qgisa
+              layers="granice_wojewodztw_db"
+              url="http://127.0.0.1:8080/geoserver/prge/wms"
             />
           </LayersControl.BaseLayer>
+          {/* <LayersControl.Overlay name="granice_wojewodztwa_db_wfs">
+            <GeoJSON
+              data={}
+            />
+          </LayersControl.Overlay> */}
         </LayersControl>
       </MapContainer>
     </div>
